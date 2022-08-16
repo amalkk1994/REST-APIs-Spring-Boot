@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+
 @Service
 public class CharacterService {
 
@@ -29,14 +30,25 @@ public class CharacterService {
         return characterRepository.findById(id).orElseThrow(() -> new RuntimeException("No record found!!!"));
     }
 
-    public CharacterBB getCharacterByName(String name) {
-        return characterRepository.findByName(name);
+    public List<CharacterBB> getCharacterByName(String name) throws Exception {
+       if(isInteger(name)) {
+           throw new Exception("invalid.name");
+       }
+        return characterRepository.findAllByName(name);
+    }
+
+    private boolean isInteger(String name) {
+        try {
+            Integer.parseInt(name);
+            return true;
+        } catch(Exception err) {
+           return false;
+        }
     }
 
     public List<CharacterBB> getAllCharacters() {
-        // return characterRepository.findAll();
-        return StreamSupport.stream(characterRepository.findAll().spliterator(), false)
-                .collect(Collectors.toList());
+        // return characterRepository.findAll().get;
+       return StreamSupport.stream(characterRepository.findAll().spliterator(), false).collect(Collectors.toList());
     }
 
     public CharacterBB updateCharacter(CharacterBB characterBB) {

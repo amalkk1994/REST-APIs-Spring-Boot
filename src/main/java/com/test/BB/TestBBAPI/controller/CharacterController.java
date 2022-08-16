@@ -1,6 +1,7 @@
 package com.test.BB.TestBBAPI.controller;
 
 import com.test.BB.TestBBAPI.model.CharacterBB;
+import com.test.BB.TestBBAPI.model.CharacterListResponse;
 import com.test.BB.TestBBAPI.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,10 @@ public class CharacterController {
     }
 
     @GetMapping("/character")
-    public CharacterBB getCharacterByName(@RequestParam(value = "name", required = false) String name) {
-        return characterService.getCharacterByName(name);
+    public CharacterListResponse getCharacterByName(@RequestParam(value = "name", required = false) String name) throws Exception {
+        CharacterListResponse characterListResponse = new CharacterListResponse();
+        characterListResponse.setCharactersBB(characterService.getCharacterByName(name));
+        return characterListResponse;
     }
 
     @PutMapping("/character")
