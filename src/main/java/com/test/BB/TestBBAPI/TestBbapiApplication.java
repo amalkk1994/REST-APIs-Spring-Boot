@@ -8,7 +8,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 
 @SpringBootApplication
 public class TestBbapiApplication {
-
+// this is a sample implementation using H2 in memory database
 	@Bean
 	public MessageSource messageSource() {
 
