@@ -1,6 +1,7 @@
 package com.test.BB.TestBBAPI.service;
 
 import com.test.BB.TestBBAPI.model.CharacterBB;
+import com.test.BB.TestBBAPI.model.CharactersBB;
 import com.test.BB.TestBBAPI.repository.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +22,14 @@ public class CharacterService {
         this.characterRepository = characterRepository;
     }
 
+    /*
+
     public CharacterBB createCharacter(CharacterBB characterBB) {
 
         return characterRepository.save(characterBB);
     }
 
-    public CharacterBB getCharacterById(Long id) {
+    public CharacterBB getCharacterById(String id) {
         return characterRepository.findById(id).orElseThrow(() -> new RuntimeException("No record found!!!"));
     }
 
@@ -46,17 +49,25 @@ public class CharacterService {
         }
     }
 
-    public List<CharacterBB> getAllCharacters() {
+
+     */
+
+    public List<CharactersBB> getAllCharacters() {
         // return characterRepository.findAll().get;
+        System.out.println(characterRepository.findAll());
+        System.out.println("Characters" + characterRepository.findAll().toString());
        return StreamSupport.stream(characterRepository.findAll().spliterator(), false).collect(Collectors.toList());
     }
 
+    /*
     public CharacterBB updateCharacter(CharacterBB characterBB) {
         return characterRepository.save(characterBB);
     }
 
-    public String deleteCharacter(Long id) {
+    public String deleteCharacter(String id) {
         characterRepository.deleteById(id);
         return "Record with id: "+id+" deleted";
     }
+
+     */
 }
