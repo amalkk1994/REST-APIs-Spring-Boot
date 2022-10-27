@@ -2,6 +2,7 @@ package com.test.BB.TestBBAPI.controller;
 
 import com.test.BB.TestBBAPI.model.CharacterBB;
 import com.test.BB.TestBBAPI.model.CharacterListResponse;
+import com.test.BB.TestBBAPI.model.CharactersBB;
 import com.test.BB.TestBBAPI.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +20,14 @@ public class CharacterController {
     }
 
     @GetMapping("/characters")
-    public List<CharacterBB> getAllCharacters() {
+    public List<CharactersBB> getAllCharacters() {
       //  return new CharacterBB(1L, "Walter White", "High school chemistry Teacher", "HeisenBerg");
      return characterService.getAllCharacters();
     }
 
+    /*
     @GetMapping("/character/{id}")
-    public CharacterBB getCharacterById(@PathVariable Long id) {
+    public CharacterBB getCharacterById(@PathVariable String id) {
         return characterService.getCharacterById(id);
     }
 
@@ -47,7 +49,10 @@ public class CharacterController {
     }
 
     @DeleteMapping("/character/{id}")
-    public String deleteCharacter(@PathVariable  Long id) {
+    public String deleteCharacter(@PathVariable  String id) {
         return characterService.deleteCharacter(id);
     }
+
+
+     */
 }
