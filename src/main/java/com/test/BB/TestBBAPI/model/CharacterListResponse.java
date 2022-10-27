@@ -10,5 +10,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CharacterListResponse {
-    private List<CharactersBB> charactersBB;
+    private List<CharactersBB> data;
 }

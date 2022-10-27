@@ -20,9 +20,12 @@ public class CharacterController {
     }
 
     @GetMapping("/characters")
-    public List<CharactersBB> getAllCharacters() {
+    public CharacterListResponse getAllCharacters() {
       //  return new CharacterBB(1L, "Walter White", "High school chemistry Teacher", "HeisenBerg");
-     return characterService.getAllCharacters();
+    // return characterService.getAllCharacters();
+        CharacterListResponse characterListResponse = new CharacterListResponse();
+        characterListResponse.setData(characterService.getAllCharacters());
+        return characterListResponse;
     }
 
     /*
