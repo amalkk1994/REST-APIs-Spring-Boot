@@ -9,6 +9,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CharacterListResponse {
-    private List<CharactersBB> data;
+public class QuotesListResponse {
+    private List<QuotesBB> data;
 }

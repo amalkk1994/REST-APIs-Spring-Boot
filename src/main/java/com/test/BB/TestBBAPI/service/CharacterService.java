@@ -52,6 +52,13 @@ public class CharacterService {
 
      */
 
+
+    public CharactersBB getCharacterById(String id) {
+        return characterRepository.findByCharId(id);
+    }
+
+
+
     public List<CharactersBB> getAllCharacters() {
         // return characterRepository.findAll().get;
         System.out.println(characterRepository.findAll());
