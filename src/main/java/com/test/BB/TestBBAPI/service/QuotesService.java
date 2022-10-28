@@ -22,4 +22,8 @@ public class QuotesService {
     public List<QuotesBB> getAllQuotes() {
         return StreamSupport.stream(quotesRepository.findAll().spliterator(), false).collect(Collectors.toList());
     }
+
+    public QuotesBB getQuoteById(String id) {
+        return quotesRepository.findByQuoteId(id);
+    }
 }

@@ -7,6 +7,7 @@ import com.test.BB.TestBBAPI.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,20 +21,24 @@ public class CharacterController {
     }
 
     @GetMapping("/characters")
-    public CharacterListResponse getAllCharacters() {
+    public List<CharactersBB> getAllCharacters() {
       //  return new CharacterBB(1L, "Walter White", "High school chemistry Teacher", "HeisenBerg");
     // return characterService.getAllCharacters();
-        CharacterListResponse characterListResponse = new CharacterListResponse();
-        characterListResponse.setData(characterService.getAllCharacters());
-        return characterListResponse;
+     //   CharacterListResponse characterListResponse = new CharacterListResponse();
+     //   characterListResponse.setData(characterService.getAllCharacters());
+        return characterService.getAllCharacters();
     }
 
-    /*
-    @GetMapping("/character/{id}")
-    public CharactersBB getCharacterById(@PathVariable String id) {
-        return characterService.getCharacterById(id);
+
+    @GetMapping("/characters/{id}")
+    public List<CharactersBB> getCharacterById(@PathVariable String id) {
+       // CharacterListResponse characterListResponse = new CharacterListResponse();
+       // characterListResponse.setData(characterService.getCharacterById(id));
+        List<CharactersBB> characterList = new ArrayList<CharactersBB>();
+        characterList.add(characterService.getCharacterById(id));
+        return characterList;
     }
-    */
+
 
 
     /*

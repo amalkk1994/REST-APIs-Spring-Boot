@@ -52,12 +52,11 @@ public class CharacterService {
 
      */
 
-    /*
 
     public CharactersBB getCharacterById(String id) {
-        return characterRepository.findByChar_id(id);
+        return characterRepository.findByCharId(id);
     }
-*/
+
 
 
     public List<CharactersBB> getAllCharacters() {
