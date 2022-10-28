@@ -6,12 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class CharactersBB {
 
     @Id

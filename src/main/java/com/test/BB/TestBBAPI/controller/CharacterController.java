@@ -30,6 +30,14 @@ public class CharacterController {
 
     /*
     @GetMapping("/character/{id}")
+    public CharactersBB getCharacterById(@PathVariable String id) {
+        return characterService.getCharacterById(id);
+    }
+    */
+
+
+    /*
+    @GetMapping("/character/{id}")
     public CharacterBB getCharacterById(@PathVariable String id) {
         return characterService.getCharacterById(id);
     }

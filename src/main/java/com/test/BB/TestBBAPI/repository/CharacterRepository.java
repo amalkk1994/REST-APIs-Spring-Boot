@@ -13,4 +13,5 @@ public interface CharacterRepository extends MongoRepository<CharactersBB, Strin
    // List<CharacterBB> findAllByName(String name);
     //CharacterBB findByName(String name);
   //  CharacterBB findByNameAndOccupation(String name, String occupation); // multiple conditions
+    // CharactersBB findByChar_id(String char_id);
 }
